@@ -1,0 +1,63 @@
+/* ============================================
+   SEC5 — 3 COLUMN LAYOUT
+   ============================================ */
+
+.sec5-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* space between columns */
+  width: 100%;
+  padding: 4%;
+  box-sizing: border-box;
+  background: #000;
+  justify-content: space-between; /* evenly distributes columns */
+}
+
+.sec5-item {
+  flex: 1 1 calc(33.33% - 1.33rem); /* 3 columns */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.sec5-image {
+  width: 100%;
+  aspect-ratio: 16/9; /* keeps images proportional */
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px; /* all four corners rounded */
+  margin-bottom: 0.75rem;
+}
+
+.sec5-text {
+  width: 100%;
+  color: #fff;
+  font-size: clamp(0.78rem, 0.9vw, 0.98rem);
+  line-height: 1.25;
+  text-align: left;
+  padding: 0; /* flush with image */
+}
+
+.sec5-text p {
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   TABLET
+   ============================================ */
+@media (max-width: 1024px) {
+  .sec5-item {
+    flex: 1 1 100%; /* stack items vertically */
+  }
+}
+
+/* ============================================
+   MOBILE
+   ============================================ */
+@media (max-width: 600px) {
+  .sec5-text {
+    font-size: 0.72rem;
+    line-height: 1.15;
+  }
+}

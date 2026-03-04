@@ -1,0 +1,90 @@
+/* ================================
+   TASK SECTION — RESPONSIVE SYSTEM
+   ================================ */
+
+/* Section wrapper */
+.section {
+  width: 100%;
+  padding: 4rem 2rem;
+  background-color: #000;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Grid container */
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;        /* unified width across all sections */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Grid item */
+.task-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image */
+.grid-image {
+  width: 100%;
+  padding-top: 56%;         /* 16:9 cinematic ratio */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+/* Text */
+.grid-text {
+  color: #fff;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 1rem;
+  max-width: 40ch;
+}
+
+/* ================================
+   TABLET (900px and below)
+   ================================ */
+@media (max-width: 900px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .task-grid {
+    gap: 1.5rem;
+  }
+
+  .grid-image {
+    padding-top: 60%;       /* slightly taller for tablet */
+  }
+}
+
+/* ================================
+   MOBILE (600px and below)
+   ================================ */
+@media (max-width: 600px) {
+  .section {
+    padding: 2.2rem 1.2rem;
+  }
+
+  .task-grid {
+    grid-template-columns: 1fr;   /* force single column */
+    gap: 1.2rem;
+  }
+
+  .grid-image {
+    padding-top: 70%;             /* stronger mobile presence */
+    border-radius: 6px;
+  }
+
+  .grid-text {
+    font-size: clamp(0.9rem, 2.2vw, 1rem);
+    line-height: 1.45;
+  }
+}

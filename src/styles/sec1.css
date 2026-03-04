@@ -1,0 +1,69 @@
+/* SECTION WRAPPER */
+.sec1 {
+  width: 98%;
+  max-width: 1400px;     /* prevents ultra-wide stretching */
+  margin: 0 auto;
+  padding: 2rem 1%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+/* GRID */
+.sec1-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+/* ITEM */
+.sec1-item {
+  flex: 1 1 calc(33.33% - 1rem);   /* 3 per row on desktop */
+  min-width: 260px;
+  max-width: 400px;                /* prevents over-stretching */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* IMAGE */
+.sec1-image {
+  width: 100%;
+  padding-top: 60%;                /* responsive aspect ratio */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+/* TEXT */
+.sec1-text {
+  color: #fff;
+  font-size: clamp(0.95rem, 1.1vw, 1.2rem);
+  text-align: left;
+  margin-top: 0.8rem;
+  line-height: 1.5;
+  width: 100%;
+  max-width: 95%;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .sec1-item {
+    flex: 1 1 calc(50% - 1rem);    /* 2 per row */
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .sec1-item {
+    flex: 1 1 100%;                /* 1 per row */
+    max-width: 100%;
+  }
+
+  .sec1-image {
+    padding-top: 70%;              /* taller images on mobile */
+  }
+}

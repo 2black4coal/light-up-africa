@@ -1,0 +1,72 @@
+/* ===============================
+   ROOT WRAPPER — RESPONSIVE
+   =============================== */
+.logo-carousel-root {
+  width: 100%;
+  overflow: hidden;
+  padding: 2.5rem 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   TRACK — INFINITE SCROLL
+   =============================== */
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);   /* fluid spacing */
+  width: max-content;
+  animation: scrollLogos 22s linear infinite;
+}
+
+/* ===============================
+   LOGO IMAGES — RESPONSIVE
+   =============================== */
+.logo-item img {
+  height: clamp(38px, 6vw, 60px); /* scales with screen size */
+  width: auto;
+  opacity: 0.9;
+  filter: brightness(1) contrast(1.1);
+  transition: 0.3s ease;
+}
+
+.logo-item img:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* ===============================
+   INFINITE SCROLL ANIMATION
+   =============================== */
+@keyframes scrollLogos {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===============================
+   TABLET
+   =============================== */
+@media (max-width: 1024px) {
+  .logo-track {
+    animation-duration: 26s; /* slightly slower */
+  }
+}
+
+/* ===============================
+   MOBILE
+   =============================== */
+@media (max-width: 600px) {
+  .logo-carousel-root {
+    padding: 1.8rem 0;
+  }
+
+  .logo-track {
+    gap: 1.4rem;
+    animation-duration: 30s; /* smooth, not too fast */
+  }
+
+  .logo-item img {
+    height: clamp(28px, 8vw, 42px);
+  }
+}

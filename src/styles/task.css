@@ -1,0 +1,73 @@
+/* ===============================
+   UNIVERSAL TASK SECTION LAYOUT
+   =============================== */
+.task-section {
+  width: 100%;
+  min-height: 100vh;          /* each section fills the screen */
+  padding: 4rem 2rem;         /* prevents touching edges */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Reverse layout support */
+.task-section.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Text column */
+.task-text {
+  flex: 1;
+  max-width: 650px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Image column */
+.task-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.task-image img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ===============================
+   RESPONSIVE — TABLET
+   =============================== */
+@media (max-width: 1024px) {
+  .task-section {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — MOBILE
+   =============================== */
+@media (max-width: 700px) {
+  .task-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1.2rem;
+  }
+
+  .task-image img {
+    max-width: 90%;
+  }
+
+  .task-text {
+    max-width: 100%;
+  }
+}

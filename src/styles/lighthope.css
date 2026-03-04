@@ -1,0 +1,212 @@
+/* ===============================
+   ROOT CONTAINER — RESPONSIVE
+   =============================== */
+.light-root {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 6rem 1.5rem 4rem;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   NAVIGATION — FIXED + RESPONSIVE
+   =============================== */
+.light-nav {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-arrow,
+.nav-home {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.5rem 1rem;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease;
+}
+
+.nav-arrow:hover,
+.nav-home:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ===============================
+   CONTENT WRAPPER
+   =============================== */
+.light-content {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ===============================
+   TITLE IMAGE BLOCK
+   =============================== */
+.title-block {
+  margin-bottom: 4rem;
+}
+
+.title-image {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.title-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0.9) contrast(1.05);
+  border-radius: 6px;
+}
+
+/* ===============================
+   LAMP GLOW — RESPONSIVE
+   =============================== */
+@keyframes pulseGlow {
+  0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.55; }
+  50%  { transform: translate(-50%, -50%) scale(1.18); opacity: 0.95; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.55; }
+}
+
+.lamp-glow {
+  position: absolute;
+  top: 45%;
+  left: 30%;
+  width: clamp(180px, 28vw, 300px);
+  height: clamp(180px, 28vw, 300px);
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255,210,120,0.55) 0%,
+    rgba(255,180,80,0.28) 40%,
+    rgba(255,150,60,0) 80%
+  );
+  filter: blur(65px);
+  transform: translate(-50%, -50%);
+  animation: pulseGlow 3.2s ease-in-out infinite;
+}
+
+/* ===============================
+   OVERLAY TITLE — RESPONSIVE
+   =============================== */
+.image-overlay-title {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(1.3rem, 3vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.65);
+  text-shadow: 0 0 10px rgba(255,255,255,0.08);
+  white-space: nowrap;
+}
+
+/* ===============================
+   LEADER QUOTES
+   =============================== */
+.leader-block {
+  margin-bottom: 2rem;
+}
+
+.leader-quote {
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 0.15rem;
+}
+
+.leader-name {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  font-family: "Playfair Display", cursive;
+  font-size: 0.95rem;
+  opacity: 0.50;
+}
+
+.name-line {
+  width: 28px;
+  height: 1px;
+  background: rgba(255,255,255,0.85);
+}
+
+/* ===============================
+   FINAL MESSAGE
+   =============================== */
+.final-message {
+  margin-top: 5rem;
+}
+
+.final-message p {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.closing-strong {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+   CAROUSEL SPACER
+   =============================== */
+.carousel-space {
+  margin-top: 6rem;
+  min-height: 250px;
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+   =============================== */
+@media (max-width: 768px) {
+  .light-root {
+    padding: 5rem 1.2rem 3rem;
+  }
+
+  .light-nav {
+    top: 1.2rem;
+    left: 1.2rem;
+  }
+
+  .lamp-glow {
+    filter: blur(45px);
+  }
+
+  .image-overlay-title {
+    bottom: 12px;
+    font-size: clamp(1.1rem, 4vw, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .lamp-glow {
+    width: 160px;
+    height: 160px;
+    filter: blur(35px);
+  }
+
+  .image-overlay-title {
+    font-size: clamp(1rem, 4.5vw, 1.6rem);
+  }
+
+  .leader-name {
+    font-size: 0.85rem;
+  }
+}

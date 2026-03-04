@@ -1,0 +1,71 @@
+/* ============================================
+   SPLIT LAYOUT — IMAGE LEFT / TEXT RIGHT
+   ============================================ */
+
+.split-section {
+  width: 100%;
+  background: #000;
+  padding: 5% 6%;
+  box-sizing: border-box;
+}
+
+.split-row {
+  display: flex;
+  width: 100%;
+  min-height: 500px; /* ensures strong vertical presence */
+  gap: 3rem;
+  align-items: stretch; /* forces equal height */
+}
+
+/* IMAGE COLUMN */
+.split-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+}
+
+/* TEXT COLUMN */
+.split-text {
+  flex: 1;
+  color: #fff;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split-text p {
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   TABLET
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .split-row {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .split-image {
+    height: 400px;
+  }
+}
+
+/* ============================================
+   MOBILE
+   ============================================ */
+
+@media (max-width: 600px) {
+  .split-image {
+    height: 300px;
+  }
+
+  .split-text {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+}

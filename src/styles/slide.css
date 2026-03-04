@@ -1,0 +1,73 @@
+/* ===============================
+   CINEMATIC SLIDE CONTAINER
+   =============================== */
+.slide-cinema {
+  position: relative;
+  width: 100%;
+  height: 100vh;              /* REQUIRED for image visibility */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.slide-cinema-text {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  font-size: clamp(1.2rem, 3vw, 2.4rem);
+  font-weight: 600;
+  text-align: center;
+  max-width: 85%;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+
+  color: #fff;
+
+  -webkit-text-stroke: 0.7px rgba(0,0,0,0.85);
+  text-shadow:
+    0 0 3px rgba(0,0,0,0.9),
+    0 0 6px rgba(0,0,0,0.7),
+    0 0 12px rgba(0,0,0,0.5);
+
+  paint-order: stroke fill;
+  padding: 0 1rem;
+
+  animation: textFloat 10s ease-in-out infinite;
+}
+
+/* Disable floating for first slide */
+.slide-cinema-text.first-slide {
+  animation: none;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.4),
+    0 0 20px rgba(255,215,120,0.3),
+    0 0 40px rgba(255,215,120,0.2);
+}
+
+/* FLOAT ANIMATION */
+@keyframes textFloat {
+  0%   { transform: translate(-50%, 0); }
+  50%  { transform: translate(-50%, -10px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .slide-cinema-text {
+    bottom: 8%;
+    max-width: 90%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .slide-cinema-text {
+    bottom: 6%;
+    max-width: 95%;
+    -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.5);
+  }
+}

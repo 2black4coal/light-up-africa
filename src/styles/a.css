@@ -1,0 +1,91 @@
+/* ============================================
+   GLOBAL 45/45 FULL SCREEN LAYOUT
+   ============================================ */
+
+.layout-45 {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  padding: 4%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+}
+
+/* Each row = half screen */
+.layout-45 .row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4%;
+}
+
+.layout-45 .row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMAGE SIDE */
+.layout-45 .image {
+  flex: 0 0 45%;
+  height: 85%;
+  min-height: 260px; /* ensures image never disappears */
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+}
+
+/* TEXT SIDE */
+.layout-45 .text {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #fff;
+  padding: 0 1.2rem; /* prevents touching edges */
+  font-size: clamp(0.78rem, 0.9vw, 0.98rem);
+  line-height: 1.22;
+}
+
+.layout-45 .text p {
+  margin-bottom: 0.4rem;
+}
+
+/* ============================================
+   TABLET
+   ============================================ */
+@media (max-width: 1024px) {
+  .layout-45 {
+    height: auto;
+    gap: 3rem;
+  }
+
+  .layout-45 .row,
+  .layout-45 .row.reverse {
+    flex-direction: column;
+  }
+
+  .layout-45 .image {
+    width: 100%;
+    height: 240px;
+  }
+
+  .layout-45 .text {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+/* ============================================
+   MOBILE
+   ============================================ */
+@media (max-width: 600px) {
+  .layout-45 .text {
+    font-size: 0.72rem;
+    line-height: 1.15;
+  }
+}

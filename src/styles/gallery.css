@@ -1,0 +1,27 @@
+/* ===============================
+   GALLERY ROOT — FULLSCREEN + RESPONSIVE
+   =============================== */
+.gallery-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;     /* full screen but flexible */
+  height: auto;          /* prevents cut-off */
+  overflow: visible;     /* allow content to extend */
+  background: #000;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .gallery-root {
+    min-height: 100svh;  /* safe viewport height */
+    height: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .gallery-root {
+    min-height: 100dvh;  /* dynamic viewport height */
+    height: auto;
+  }
+}
