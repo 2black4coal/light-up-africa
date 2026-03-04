@@ -1,5 +1,5 @@
 import React from "react";
-import "./../styles/logocarousel.css";
+import "./../styles/logoCarousel.css";
 
 import logo1 from "../assets/logos/logo1.png";
 import logo2 from "../assets/logos/logo2.png";
