@@ -1,0 +1,153 @@
+/* =========================
+   PAGE BASE
+========================= */
+
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px 80px;
+  color: #fff;
+
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.05), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(255,255,255,0.03), transparent 50%),
+    #000;
+}
+
+.contact-inner {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.contact-title {
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 0 16px rgba(255,255,255,0.15);
+}
+
+.contact-subtitle {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.contact-section {
+  margin-top: 40px;
+}
+
+.contact-heading {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  color: rgba(255,255,255,0.85);
+}
+
+.contact-text {
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+
+.contact-text.small {
+  font-size: 0.85rem;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  color: rgba(255,255,255,0.6);
+}
+
+input, textarea, select {
+  background: rgba(255,255,255,0.05);
+  border: none;
+  padding: 10px;
+  color: #fff;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 10px rgba(255,255,255,0.15);
+}
+
+/* BUTTON */
+
+.contact-button {
+  margin-top: 10px;
+  padding: 12px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* =========================
+   EMAIL
+========================= */
+
+.contact-email {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 640px) {
+  .contact-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.9rem;
+  }
+}

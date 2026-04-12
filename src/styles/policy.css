@@ -1,0 +1,133 @@
+/* =========================
+   PAGE
+========================= */
+
+.policy-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px 80px;
+  color: #fff;
+
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.05), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(255,255,255,0.03), transparent 50%),
+    #000;
+}
+
+.policy-inner {
+  width: 100%;
+  max-width: 820px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.policy-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 16px rgba(255,255,255,0.15);
+}
+
+.policy-subtitle {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.policy-section {
+  margin-top: 36px;
+}
+
+.policy-section h2 {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: rgba(255,255,255,0.85);
+}
+
+.policy-section p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   EXIT ARROW
+========================= */
+
+.policy-next {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+  color: rgba(255,255,255,0.6);
+  transition: all 0.3s ease;
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+.policy-next .arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.policy-next:hover {
+  color: #fff;
+}
+
+.policy-next:hover .arrow {
+  transform: translateX(-8px);
+}
+
+.policy-next .label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* glow */
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 6px rgba(255,255,255,0.1); }
+  50% { text-shadow: 0 0 18px rgba(255,255,255,0.35); }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+  .policy-title {
+    font-size: 1.5rem;
+  }
+
+  .policy-section p {
+    font-size: 0.9rem;
+  }
+}

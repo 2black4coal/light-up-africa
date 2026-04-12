@@ -210,3 +210,36 @@
     font-size: 0.85rem;
   }
 }
+/* ===========================
+   Light Africa – Minimal Footer
+   =========================== */
+
+.lite-footer {
+  width: 100%;
+  padding: 10px 0 30px 0;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.lite-footer-links {
+  font-size: 11px;
+  opacity: 0.55;
+  color: #ffffff;
+  letter-spacing: 0.4px;
+}
+
+.lite-footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
+}
+
+.lite-footer-links a:hover {
+  opacity: 1;
+}
+
+.divider {
+  margin: 0 6px;
+  opacity: 0.4;
+}

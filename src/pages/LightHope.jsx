@@ -170,7 +170,8 @@ export default function LightHope() {
 
 
 
-{/* WRAP‑UP SIGNATURE */}
+
+{/* EXISTING BOTTOM TEXT */}
 <div
   style={{
     textAlign: "center",
@@ -178,13 +179,33 @@ export default function LightHope() {
     fontSize: "0.85rem",
     lineHeight: "1.4",
     marginTop: "40px",
-    paddingBottom: "30px"
+    paddingBottom: "10px"
   }}
 >
   <div>Light & Hope — A Vision for a Powered Africa</div>
   <div>Guided by truth. Driven by purpose.</div>
   <div>For every village. Every city. Every generation.</div>
 </div>
+
+{/* MINIMAL FOOTER LINKS */}
+<footer className="lite-footer">
+  <div className="lite-footer-links">
+    <a href="/about">About</a>
+    <span className="divider">|</span>
+    <a href="/contact">Contact</a>
+    <span className="divider">|</span>
+    <a href="/privacy-policy">Privacy Policy</a>
+    <span className="divider">|</span>
+    <a href="/terms">Terms</a>
+    <span className="divider">|</span>
+    <a href="/disclaimer">Disclaimer</a>
+  </div>
+</footer>
+
+
+
+
+
 
 
 
