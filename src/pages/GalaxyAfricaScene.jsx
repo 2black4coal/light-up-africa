@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as THREE from "three";
+import { Helmet } from "react-helmet";
+
 import "../styles/galaxy.css";
 
 import galaxy from "../assets/audio/galaxy.mp3";
@@ -196,9 +198,79 @@ export default function GalaxyAfricaScene() {
         audioRef.current.volume = vol;
       }, 50);
     }
-  };
+};
 
-  return (
+return (
+  <>
+   <Helmet>
+  <title>Light Up Africa — A Vision for a Powered Continent</title>
+  <meta
+    name="description"
+    content="Light Up Africa is a movement dedicated to awareness, innovation, and hope for reliable electricity across the African continent."
+  />
+  <meta
+    name="keywords"
+    content="Africa electricity, energy access, Light Up Africa, African development, renewable energy Africa"
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://light-up-africa.com/" />
+
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Light Up Africa",
+        "url": "https://light-up-africa.com",
+        "description": "A cinematic digital movement dedicated to raising awareness and accelerating electrification across Africa.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Light Up Africa"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://light-up-africa.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    `}
+  </script>
+  <script type="application/ld+json">
+  {`
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://light-up-africa.com/"
+        }
+      ]
+    }
+  `}
+</script>
+  <link rel="canonical" href="https://light-up-africa.com/" />
+
+
+
+   {/* OpenGraph (Facebook, WhatsApp, LinkedIn, Slack, Discord, iMessage, etc.) */}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Light Up Africa — A Continental Movement for Universal Electricity" />
+  <meta property="og:description" content="A cinematic call to action for Africa’s electrification. Join the movement bringing light, hope, and opportunity to every community." />
+  <meta property="og:url" content="https://light-up-africa.com/" />
+  <meta property="og:image" content="https://light-up-africa.com/og-home.jpg" />
+
+  {/* Twitter (X) */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Light Up Africa — A Continental Movement for Universal Electricity" />
+  <meta name="twitter:description" content="A cinematic call to action for Africa’s electrification. Join the movement bringing light, hope, and opportunity to every community." />
+  <meta name="twitter:image" content="https://light-up-africa.com/og-home.jpg" />
+</Helmet>
+
+
+   
     <div className="landing-root" onClick={handleClick}>
       <div ref={mountRef} className="three-canvas" />
       <div className="landing-content">
@@ -206,5 +278,7 @@ export default function GalaxyAfricaScene() {
         <p className="landing-sub">Constant electricity across the continent</p>
       </div>
     </div>
-  );
+  </>
+);
+
 }
