@@ -10,6 +10,15 @@ export default function LightHope() {
 
   const leaders = [
     {
+  quote: `Has spoken widely about the need for reliable electricity across Africa and helped launch large-scale solar projects aimed at bringing power to underserved communities.`,
+  name: 'Akon'
+},
+{
+  quote: `Has emphasized that protecting the planet and expanding clean energy solutions are essential for long-term human progress.`,
+  name: 'Jeff Bezos'
+},
+,
+    {
       quote: `Has repeatedly described energy access as essential for development and climate resilience in Africa, emphasizing renewable energy as a major opportunity for the continent.`,
       name: 'António Guterres'
     },
@@ -29,6 +38,7 @@ export default function LightHope() {
       quote: `Has supported rural electrification programs aimed at improving education, healthcare delivery, and women-led enterprises.`,
       name: 'Samia Suluhu Hassan'
     },
+
     {
       quote: `Has framed electricity and digital infrastructure as foundational to modernization and economic transformation.`,
       name: 'Paul Kagame'
@@ -86,9 +96,23 @@ export default function LightHope() {
       name: "Fatih Birol"
     },
     {
+  quote: `Has spoken about the creativity and resilience of African youth, emphasizing that opportunity—not talent—is what many lack.`,
+  name: 'Trevor Noah'
+},
+    {
+  quote: `Has noted that solar energy is one of the most abundant resources on Earth and could power entire regions if properly harnessed.`,
+  name: 'Elon Musk'
+},
+
+    {
       quote: "Advocates for accelerating clean energy production and expanding access, emphasizing that a just energy transition must support developing nations.",
       name: "Luiz Inácio Lula da Silva"
     },
+    {
+  quote: `Has emphasized that Africa’s progress depends on strong institutions, reliable infrastructure, and investments that empower communities.`,
+  name: 'Mo Ibrahim'
+},
+
     {
       quote: "Calls on world leaders to set ambitious renewable energy targets and scale up action to deliver electricity access and clean power for all.",
       name: "Global Renewables Alliance"
