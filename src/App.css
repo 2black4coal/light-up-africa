@@ -1,8 +1,8 @@
-/* RESET APP WRAPPER FOR FULLSCREEN SLIDESHOW */
-
+/* =========================
+   ROOT APP WRAPPER
+========================= */
 #root {
   width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100%;        /* 🔥 match index.css */
+  background: #000;
 }

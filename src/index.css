@@ -1,31 +1,26 @@
-/* GLOBAL RESET FOR FULLSCREEN SLIDESHOW */
-
+/* =========================
+   GLOBAL RESET — LOCKED VIEWPORT
+========================= */
 html, body, #root {
   margin: 0;
   padding: 0;
   width: 100%;
-  
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: 100%;              /* 🔥 LOCK EVERYTHING */
   background: #000;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow-x: clip;          /* 🔥 no sideways scroll */
 }
 
-html, body {
-  height: auto !important;
-  overflow-y: auto !important;
+/* Prevent scrollbar layout shift */
+html {
+  scrollbar-gutter: stable;
 }
 
-
-/* Remove Vite's default flex layout */
+/* Remove default browser behavior */
 body {
   display: block;
-  min-width: 0;
-  min-height: 0;
 }
 
-/* Prevent scrollbars anywhere */
+/* Universal */
 * {
   box-sizing: border-box;
 }

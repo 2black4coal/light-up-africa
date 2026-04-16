@@ -1,37 +1,33 @@
 /* ===============================
-   LANDING ROOT — FULL RESPONSIVE + AUTOPLAY SAFE
-   =============================== */
+   LANDING ROOT — HARD LOCK SCENE
+=============================== */
 .landing-root {
-  width: 100%;
-  min-height: 100vh;             /* allows full height but not locked */
-  height: auto;                  /* prevents autoplay blocking */
-  overflow: visible;             /* prevents browser gesture block */
   position: relative;
+  width: 100%;
+  height: 100vh;           /* 🔥 FIXED VIEWPORT */
+  overflow: hidden;        /* 🔥 no bleed */
   background: radial-gradient(ellipse at center, #000010 0%, #000000 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* cursor: pointer;  ❌ REMOVE — blocks autoplay */
 }
 
 /* ===============================
-   THREE CANVAS — FULLSCREEN + AUTOPLAY SAFE
-   =============================== */
+   THREE CANVAS — TRUE FULLSCREEN
+=============================== */
 .three-canvas {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;                /* 🔥 PERFECT FIT */
   width: 100%;
   height: 100%;
   display: block;
-  overflow: hidden;
   z-index: 1;
-  pointer-events: none; /* ✔ allows autoplay */
+  pointer-events: none;
 }
 
 /* ===============================
-   CENTERED CONTENT
-   =============================== */
+   CONTENT LAYER
+=============================== */
 .landing-content {
   position: relative;
   z-index: 10;
@@ -39,65 +35,21 @@
   color: #ffffff;
   pointer-events: none;
   padding: 0 1.5rem;
-  box-sizing: border-box;
   max-width: 90%;
 }
 
 /* ===============================
-   TITLES WITH CLAMPED SIZES
-   =============================== */
-.landing-title,
+   TEXT
+=============================== */
 .landing-sub {
-  font-weight: 300;
-  opacity: 0.45;
-  letter-spacing: 0.4px;
-  text-shadow: 0 0 6px rgba(255,255,255,0.25);
-}
-
-.landing-sub {
-  font-style: italic;
-  font-size: clamp(0.95rem, 1.8vw, 1.35rem);
+  font-size: clamp(1rem, 2vw, 1.4rem);
   margin-top: 0.6rem;
-  opacity: .8;
-  text-shadow: 0 0 4px rgba(102,204,255,0.25);
+  opacity: 0.8;
 }
 
 .landing-cta {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  font-family: "Lucida Handwriting", cursive;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
   color: #ffd700;
   text-shadow: 0 0 15px #ffd700;
-  margin-bottom: 0.4rem;
 }
 
-/* ===============================
-   TABLET
-   =============================== */
-@media (max-width: 1024px) {
-  .landing-content {
-    padding: 0 1.2rem;
-  }
-}
-
-/* ===============================
-   MOBILE
-   =============================== */
-@media (max-width: 600px) {
-  .landing-root {
-    min-height: 100vh;
-    height: auto;
-  }
-
-  .landing-content {
-    padding: 0 1rem;
-  }
-
-  .landing-sub {
-    margin-top: 0.8rem;
-  }
-
-  .landing-cta {
-    margin-top: 1.5rem;
-    letter-spacing: 1.5px;
-  }
-}
