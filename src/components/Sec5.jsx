@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/b.css"; // updated CSS for this section
+import "../styles/sec5fresh.css";
 
 import s1 from "../assets/images/sec5/s1.jpg";
 import s2 from "../assets/images/sec5/s2.jpg";
@@ -54,19 +54,23 @@ export default function Sec5() {
   ];
 
   return (
-    <section className="sec5-grid">
-      {blocks.map((item, index) => (
-        <div key={index} className="sec5-item">
-          <div
-            className="sec5-image"
-            style={{ backgroundImage: `url(${item.image})` }}
-          />
-          <div
-            className="sec5-text"
-            dangerouslySetInnerHTML={{ __html: item.text }}
-          />
-        </div>
-      ))}
+    <section className="sec5fresh-wrapper">
+      <h2 className="sec5fresh-heading">Modern Power Stations — Scale, Cost, and National Impact</h2>
+
+      <div className="sec5fresh-grid">
+        {blocks.map((item, index) => (
+          <div key={index} className="sec5fresh-item">
+            <div
+              className="sec5fresh-image"
+              style={{ backgroundImage: `url(${item.image})` }}
+            />
+            <div
+              className="sec5fresh-text"
+              dangerouslySetInnerHTML={{ __html: item.text }}
+            />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

@@ -1,20 +1,22 @@
 import React from "react";
-import "../styles/c.css"; // same CSS file
+import "../styles/sec6fresh.css";
 
 import l1 from "../assets/images/sec6/l1.jpg";
 
 export default function Sec6() {
   return (
-    <section className="split-section">
-      <div className="split-row">
+    <section className="sec6fresh-wrapper">
+      <h2 className="sec6fresh-heading">Transmission Lines — The Lifeblood of Electrification</h2>
+
+      <div className="sec6fresh-row">
 
         {/* IMAGE COLUMN */}
-        <div className="split-image">
+        <div className="sec6fresh-image">
           <img src={l1} alt="Transmission Lines" />
         </div>
 
         {/* TEXT COLUMN */}
-        <div className="split-text">
+        <div className="sec6fresh-text">
           <p>
             <strong>Transmission Lines:</strong> These lines are the
             <strong> lifeblood of electrification</strong>, carrying power across

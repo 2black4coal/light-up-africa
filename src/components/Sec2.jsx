@@ -1,20 +1,21 @@
 import React from "react";
-import "../styles/a.css";
+import "../styles/sec2fresh.css";
 
 import s1 from "../assets/images/sec2/s1.jpg";
 import s2 from "../assets/images/sec2/s2.jpg";
 
 export default function Sec2() {
   return (
-    <section className="layout-45 sec2">
+    <section className="sec2fresh-wrapper">
+      <h2 className="sec2fresh-heading">Three Gorges Dam — Scale, Power, and Lessons</h2>
 
       {/* ROW 1 */}
-      <div className="row">
+      <div className="sec2fresh-row">
         <div
-          className="image"
+          className="sec2fresh-image"
           style={{ backgroundImage: `url(${s1})` }}
         />
-        <div className="text">
+        <div className="sec2fresh-text">
           <p>
             <strong>The Three Gorges Dam</strong> has an installed capacity of 22,500 megawatts, powered by
             32 main turbines rated at 700 megawatts each, along with two smaller units.
@@ -29,19 +30,19 @@ export default function Sec2() {
             supply tens of millions of homes while sharply reducing dependence on fossil fuels.
           </p>
           <p>
-            The construction required an investment estimated between $25 billion and $35 billion, covering
+            The construction required an investment  between $25 billion and $35 billion, covering
             civil works, turbines, transmission lines, worker housing, and environmental studies.
           </p>
         </div>
       </div>
 
       {/* ROW 2 */}
-      <div className="row reverse">
+      <div className="sec2fresh-row reverse">
         <div
-          className="image"
+          className="sec2fresh-image"
           style={{ backgroundImage: `url(${s2})` }}
         />
-        <div className="text">
+        <div className="sec2fresh-text">
           <p>
             Over the 10–15 years of construction and phased commissioning, the project created more than
             20,000–40,000 jobs, including engineers, welders, electricians, and heavy-equipment operators.
@@ -58,7 +59,6 @@ export default function Sec2() {
           </p>
         </div>
       </div>
-
     </section>
   );
 }

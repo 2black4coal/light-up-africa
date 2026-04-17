@@ -1,0 +1,108 @@
+/* ============================================
+   SEC2 — FRESH, UNIQUE, MATCHES SEC1 STANDARD
+============================================ */
+
+.sec2fresh-wrapper {
+  width: 98%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1%;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* HEADING (same standard as Sec1) */
+.sec2fresh-heading {
+  font-size: clamp(0.7rem, 2vw, 1.6rem);
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* ROW */
+.sec2fresh-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;   /* 🔥 bottom-align text with image */
+}
+.sec2fresh-text p:last-child {
+  margin-bottom: 0;        /* removes hidden space under last line */
+}
+
+
+.sec2fresh-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.sec2fresh-image {
+  flex: 0 0 45%;
+  height: 360px !important;      /* 🔥 reduced height */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TEXT */
+.sec2fresh-text {
+  flex: 1;
+  font-size: clamp(0.6rem, 1.8vw, 1.2rem);
+  line-height: 1.55;
+  font-weight: 300;
+  color: #fff;
+}
+
+.sec2fresh-text p {
+  margin-bottom: 1rem;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .sec2fresh-row {
+    flex-direction: column;
+  }
+
+  .sec2fresh-row.reverse {
+    flex-direction: column;
+  }
+
+.sec2fresh-image {
+  flex: 0 0 45%;
+  height: 320px;              /* 🔥 reduced height */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+}
+
+
+
+}
+
+/* MOBILE — PRIORITY */
+@media (max-width: 600px) {
+  .sec2fresh-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .sec2fresh-heading {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,107 @@
+/* ============================================
+   SEC7 — FRESH, UNIQUE, MATCHES YOUR STANDARD
+============================================ */
+
+.sec7fresh-wrapper {
+  width: 98%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1%;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* HEADING */
+.sec7fresh-heading {
+  font-size: clamp(0.7rem, 2vw, 1.6rem);
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+/* CONTAINER */
+.sec7fresh-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* LEFT — TEXT */
+.sec7fresh-text {
+  flex: 1;
+  font-size: clamp(0.6rem, 1.8vw, 1.2rem);
+  line-height: 1;        /* 🔥 YOUR REQUEST */
+  font-weight: 300;
+  color: #fff;
+}
+
+.sec7fresh-text p {
+  margin-bottom: 1rem;
+}
+
+/* RIGHT — IMAGE GRID */
+.sec7fresh-images {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.sec7fresh-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;   /* 🔥 bottom-align text with image */
+}
+.sec7fresh-text p:last-child {
+  margin-bottom: 0;        /* removes hidden space under last line */
+}
+
+
+
+
+
+
+
+
+
+.sec7fresh-image {
+  width: 100%;
+  aspect-ratio: 16/9;    /* 🔥 REDUCED HEIGHT */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .sec7fresh-container {
+    flex-direction: column;
+  }
+
+  .sec7fresh-images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* MOBILE — PRIORITY */
+@media (max-width: 600px) {
+  .sec7fresh-text {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .sec7fresh-heading {
+    font-size: 1.4rem;
+  }
+
+  .sec7fresh-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

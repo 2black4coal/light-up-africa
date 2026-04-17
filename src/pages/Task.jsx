@@ -224,6 +224,8 @@ export default function Task() {
 <div className="section-divider" />
 <RevealSection><Sec1 /></RevealSection>
 <div className="section-divider" />
+<RevealSection><Sec2 /></RevealSection>
+<div className="section-divider" />
 
 <RevealSection><Sec4 /></RevealSection>
 <div className="section-divider" />

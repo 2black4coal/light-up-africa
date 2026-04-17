@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/d.css";
+import "../styles/sec7fresh.css";
 
 import s1 from "../assets/images/sec7/s1.jpg";
 import s2 from "../assets/images/sec7/s2.jpg";
@@ -12,11 +12,13 @@ export default function Sec7() {
   const images = [s1, s2, s3, s4, s5, s6];
 
   return (
-    <section className="impact-section">
-      <div className="impact-container">
+    <section className="sec7fresh-wrapper">
+      <h2 className="sec7fresh-heading">Electricity Usage & National Impact</h2>
+
+      <div className="sec7fresh-container">
 
         {/* LEFT — TEXT */}
-        <div className="impact-text">
+        <div className="sec7fresh-text">
           <p>
             <strong>Electricity Usage & Impact:</strong> Power is the engine of life —
             it keeps hospitals running, industries producing, cities moving,
@@ -45,14 +47,17 @@ export default function Sec7() {
             <strong>Message to Leadership:</strong> Power is not politics —
             it is oxygen for growth.
           </p>
+          <p>Reliable electricity is the base of every school, hospital, factory, farm, and digital system.</p>
+<p>Power is not a luxury — it is the backbone of growth, stability, and national independence.</p>
+
         </div>
 
         {/* RIGHT — IMAGE GRID */}
-        <div className="impact-images">
+        <div className="sec7fresh-images">
           {images.map((img, i) => (
             <div
               key={i}
-              className="impact-image"
+              className="sec7fresh-image"
               style={{ backgroundImage: `url(${img})` }}
             />
           ))}

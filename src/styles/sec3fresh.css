@@ -1,0 +1,106 @@
+/* ============================================
+   SEC3 — FRESH, UNIQUE, MATCHES SEC1 STANDARD
+============================================ */
+
+.sec3fresh-wrapper {
+  width: 98%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1%;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* HEADING */
+.sec3fresh-heading {
+  font-size: clamp(0.7rem, 2vw, 1.6rem);
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* ROW */
+.sec3fresh-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end
+}
+
+
+.sec3fresh-text p:last-child {
+  margin-bottom: 0;        /* removes hidden space under last line */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sec3fresh-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.sec3fresh-image {
+  flex: 0 0 45%;
+  aspect-ratio: 16/9;        /* 🔥 REDUCED HEIGHT */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+  height: auto !important;   /* 🔥 FORCE FIX */
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+/* TEXT */
+.sec3fresh-text {
+  flex: 1;
+  font-size: clamp(0.6rem, 1.8vw, 1.2rem);
+  line-height: 1;
+  font-weight: 300;
+  color: #fff;
+}
+
+.sec3fresh-text p {
+  margin-bottom: 1rem;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .sec3fresh-row {
+    flex-direction: column;
+  }
+
+  .sec3fresh-row.reverse {
+    flex-direction: column;
+  }
+
+  .sec3fresh-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* MOBILE — PRIORITY */
+@media (max-width: 600px) {
+  .sec3fresh-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .sec3fresh-heading {
+    font-size: 1.4rem;
+  }
+}
