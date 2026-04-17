@@ -20,3 +20,18 @@
     margin: 1rem 0;
   }
 }
+/* CINEMATIC REVEAL BASE */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 700ms ease-out,
+    transform 700ms ease-out;
+  will-change: opacity, transform;
+}
+
+/* WHEN VISIBLE */
+.reveal-section.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,63 +1,83 @@
 /* ============================================
-   SEC5 — 3 COLUMN LAYOUT
-   ============================================ */
+   SECTION HEADING
+============================================ */
+.sec-heading {
+  width: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
 
+/* ============================================
+   3 COLUMN LAYOUT
+============================================ */
 .sec5-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem; /* space between columns */
+  gap: 2rem;
   width: 100%;
   padding: 4%;
-  box-sizing: border-box;
   background: #000;
-  justify-content: space-between; /* evenly distributes columns */
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .sec5-item {
-  flex: 1 1 calc(33.33% - 1.33rem); /* 3 columns */
+  flex: 1 1 calc(33.33% - 1.33rem);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 2rem;
 }
 
-.sec5-image {
+/* SQUARE EDGES */
+.sec5-image.square {
   width: 100%;
-  aspect-ratio: 16/9; /* keeps images proportional */
+  aspect-ratio: 16/9;
   background-size: cover;
   background-position: center;
-  border-radius: 14px; /* all four corners rounded */
+  border-radius: 0; /* square edges */
   margin-bottom: 0.75rem;
 }
 
 .sec5-text {
   width: 100%;
   color: #fff;
-  font-size: clamp(0.78rem, 0.9vw, 0.98rem);
-  line-height: 1.25;
+  font-size: clamp(0.82rem, 1vw, 1rem);
+  line-height: 1.35;
   text-align: left;
-  padding: 0; /* flush with image */
 }
 
 .sec5-text p {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 /* ============================================
    TABLET
-   ============================================ */
+============================================ */
 @media (max-width: 1024px) {
   .sec5-item {
-    flex: 1 1 100%; /* stack items vertically */
+    flex: 1 1 100%;
   }
 }
 
 /* ============================================
    MOBILE
-   ============================================ */
+============================================ */
 @media (max-width: 600px) {
+  .sec-heading {
+    font-size: 1.2rem;
+  }
+
   .sec5-text {
-    font-size: 0.72rem;
-    line-height: 1.15;
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+
+  .sec5-grid {
+    padding: 6%;
   }
 }

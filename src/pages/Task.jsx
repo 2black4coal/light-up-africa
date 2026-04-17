@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import RevealSection from "../components/RevealSection";
 
 import Sec1 from "../components/Sec1";
 import Sec2 from "../components/Sec2";
@@ -219,24 +220,31 @@ export default function Task() {
           <p><strong>This is the awakening. This is the struggle. This is the movement.</strong></p>
         </div>
 
-        {/* PAGE CONTENT */}
-        <Sec1 />
-        <div className="section-divider" />
-        <Sec2 />
-        <div className="section-divider" />
-        <Sec4 />
-        <div className="section-divider" />
-        <Sec3 />
-        <div className="section-divider" />
-        <SecNuclear />
-        <div className="section-divider" />
-        <Sec5 />
-        <div className="section-divider" />
-        <Sec6 />
-        <div className="section-divider" />
-        <Sec7 />
-        <div className="section-divider" />
-        <Sec8 />
+      {/* PAGE CONTENT */}
+<div className="section-divider" />
+<RevealSection><Sec1 /></RevealSection>
+<div className="section-divider" />
+
+<RevealSection><Sec4 /></RevealSection>
+<div className="section-divider" />
+
+<RevealSection><Sec3 /></RevealSection>
+<div className="section-divider" />
+
+<RevealSection><SecNuclear /></RevealSection>
+<div className="section-divider" />
+
+<RevealSection><Sec5 /></RevealSection>
+<div className="section-divider" />
+
+<RevealSection><Sec6 /></RevealSection>
+<div className="section-divider" />
+
+<RevealSection><Sec7 /></RevealSection>
+<div className="section-divider" />
+
+<RevealSection><Sec8 /></RevealSection>
+
 
         {/* BOTTOM SPACER */}
         <div style={{ height: "170px" }} />

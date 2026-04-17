@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/b.css"; // unified CSS for both Sec1 and Sec5
+import "../styles/sec1fresh.css";   // NEW UNIQUE CSS FILE
 
 import l1 from "../assets/images/sec1/l1.jpg";
 import s1 from "../assets/images/sec1/s1.jpg";
@@ -10,42 +10,43 @@ export default function Sec1() {
     {
       image: l1,
       text: `
-        <p><strong>Grand Ethiopian Renaissance Dam:</strong> Located in Guba, Benishangul-Gumuz, Ethiopia. Built in 2011 and completed over more than a decade, with final inauguration in 2025. Thousands of <strong>engineers, technicians, and workers</strong> contributed to its construction. It now generates about <strong>5,150 megawatts</strong> of clean hydroelectric power. GERD stands as Africa’s largest hydro project, funded largely by Ethiopian citizens, symbolizing engineering ambition, national industrialization, and the continent’s push toward energy independence.</p>
+        <p><strong>Project Scale:</strong> The Grand Ethiopian Renaissance Dam is one of Africa’s largest infrastructure achievements — a multi‑billion‑dollar investment built through national determination and citizen funding.</p>
       `
     },
     {
       image: s1,
       text: `
-        <p><strong>Workforce:</strong> The construction mobilized thousands of <strong>engineers, technicians, and construction workers</strong> drawn from domestic firms and international contractors; exact headcounts vary by phase and are not consistently reported.</p>
-        <p><strong>Power output:</strong> Designed for ~<strong>5,150 MW</strong> of clean electricity.</p>
-        <p><strong>Location:</strong> Guba, Benishangul-Gumuz, Ethiopia.</p>
+        <p><strong>Workforce & Hours:</strong> Thousands of engineers, technicians, and labor teams worked millions of combined hours across more than a decade to bring the project to life.</p>
+        <p><strong>Timeline:</strong> Construction began in 2011 and reached full completion in 2025.</p>
       `
     },
     {
       image: s2,
-      text:`
-<p><strong>Unique engineering scale:</strong> GERD is Africa’s largest hydroelectric project and one of its most ambitious infrastructure undertakings.</p>
-<p><strong>Strategic significance:</strong> It shifts Ethiopia from power shortages to potential regional electricity exporter, supporting industrialization and rural electrification.</p>
-<p><strong>Contested geopolitics:</strong> GERD’s control of the Blue Nile has driven years of negotiations with downstream nations, showing how one dam can reshape regional politics.</p>
-`
-
+      text: `
+        <p><strong>Completion & Impact:</strong> GERD now delivers over <strong>5,150 MW</strong> of clean power — proving that Africa can build, complete, and own world‑class engineering projects.</p>
+        <p><strong>Message:</strong> If we built this, we can build anything.</p>
+      `
     }
   ];
 
   return (
-    <section className="sec5-grid">
-      {blocks.map((item, index) => (
-        <div key={index} className="sec5-item">
-          <div
-            className="sec5-image"
-            style={{ backgroundImage: `url(${item.image})` }}
-          />
-          <div
-            className="sec5-text"
-            dangerouslySetInnerHTML={{ __html: item.text }}
-          />
-        </div>
-      ))}
+    <section className="sec1fresh-wrapper">
+      <h2 className="sec1fresh-heading">Grand Ethiopian Renaissance Dam</h2>
+
+      <div className="sec1fresh-grid">
+        {blocks.map((item, index) => (
+          <div key={index} className="sec1fresh-item">
+            <div
+              className="sec1fresh-image"
+              style={{ backgroundImage: `url(${item.image})` }}
+            />
+            <div
+              className="sec1fresh-text"
+              dangerouslySetInnerHTML={{ __html: item.text }}
+            />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
