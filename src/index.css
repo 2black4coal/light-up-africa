@@ -1,13 +1,14 @@
 /* =========================
-   GLOBAL RESET — LOCKED VIEWPORT
+   GLOBAL RESET — FIXED
 ========================= */
 html, body, #root {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;              /* 🔥 LOCK EVERYTHING */
+  min-height: 100vh;        /* ✔ correct fullscreen behavior */
+  height: auto;             /* ✔ prevents stretching */
   background: #000;
-  overflow-x: clip;          /* 🔥 no sideways scroll */
+  overflow-x: clip;         /* ✔ no sideways scroll */
 }
 
 /* Prevent scrollbar layout shift */

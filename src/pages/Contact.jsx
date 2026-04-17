@@ -159,6 +159,11 @@ const Contact = () => {
           </section>
 
         </div>
+          {/* NAV BACK */}
+        <Link to="/lighthope" className="about-next">
+          <span className="arrow">←</span>
+          <span className="label">Light Hope</span>
+        </Link>
       </div>
     </>
   );

@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import './../styles/lighthope.css';
 import lampImage from '../assets/images/lamp.png';
 import { Helmet } from "react-helmet";
 import LogoCarousel from "../components/LogoCarousel";
+
 
 export default function LightHope() {
   const navigate = useNavigate();
