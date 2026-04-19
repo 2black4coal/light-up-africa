@@ -27,31 +27,24 @@
 .sec7fresh-container {
   display: flex;
   gap: 2rem;
-  align-items: flex-end;   /* 🔥 bottom-align text with image */
+  align-items: flex-end;   /* desktop only */
 }
 
 /* LEFT — TEXT */
 .sec7fresh-text {
   flex: 1;
   font-size: clamp(0.6rem, 1.8vw, 1.2rem);
-  line-height: 1;        /* 🔥 YOUR REQUEST */
+  line-height: 1;
   font-weight: 300;
   color: #fff;
 }
 
-
-
-
-.sec7fresh-text p:last-child {
-  margin-bottom: 0;        /* removes hidden space under last line */
-}
-
-
-
-
-
 .sec7fresh-text p {
   margin-bottom: 1rem;
+}
+
+.sec7fresh-text p:last-child {
+  margin-bottom: 0;
 }
 
 /* RIGHT — IMAGE GRID */
@@ -62,53 +55,38 @@
   gap: 1rem;
 }
 
-.sec7fresh-row {
-  display: flex;
-  gap: 2rem;
-   /* 🔥 bottom-align text with image */
-}
-.sec7fresh-text p:last-child {
-  margin-bottom: 0;        /* removes hidden space under last line */
-}
-
-
-
-
-
-
-
-
-
 .sec7fresh-image {
   width: 100%;
-  aspect-ratio: 16/9;    /* 🔥 REDUCED HEIGHT */
+  aspect-ratio: 16/9;
   background-size: cover;
   background-position: center;
   border-radius: 0;
-  height: auto !important;
-  min-height: 0 !important;
-  max-height: none !important;
 }
 
 /* TABLET */
 @media (max-width: 900px) {
   .sec7fresh-container {
     flex-direction: column;
+    align-items: flex-start !important;   /* FIX */
+    width: 100%;
   }
 
   .sec7fresh-images {
+    width: 100% !important;
     grid-template-columns: repeat(3, 1fr);
   }
-}/* MOBILE — FIX IMAGE COLLAPSE */
+}
+
+/* MOBILE — FINAL FIX */
 @media (max-width: 600px) {
   .sec7fresh-container {
     flex-direction: column !important;
-    align-items: flex-start !important;   /* 🔥 CRITICAL FIX */
+    align-items: flex-start !important;   /* CRITICAL */
     width: 100% !important;
   }
 
   .sec7fresh-images {
-    width: 100% !important;               /* 🔥 ENSURES GRID NEVER COLLAPSES */
+    width: 100% !important;
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1rem !important;
@@ -117,8 +95,6 @@
   .sec7fresh-image {
     width: 100% !important;
     aspect-ratio: 16/9 !important;
-    background-size: cover;
-    background-position: center;
   }
 
   .sec7fresh-text {

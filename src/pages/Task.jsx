@@ -88,7 +88,7 @@ export default function Task() {
           style={{
             textAlign: "center",
             margin: "0 0 40px 0",
-            fontSize: "1.6rem",
+            fontSize: "2rem",
             fontWeight: "600",
             color: "rgba(255,255,255,0.9)"
           }}
@@ -116,7 +116,7 @@ export default function Task() {
               border: "1px solid rgba(255,255,255,0.2)",
               padding: "0.5rem 1rem",
               color: "rgba(255,255,255,0.85)",
-              fontSize: "0.9rem",
+              fontSize: "1.2rem",
               borderRadius: "6px",
               cursor: "pointer",
               backdropFilter: "blur(6px)",
@@ -154,8 +154,8 @@ export default function Task() {
             margin: "0 auto 80px auto",
             textAlign: "center",
             color: "rgba(255,255,255,0.85)",
-            fontSize: "1.1rem",
-            lineHeight: "1.6",
+            fontSize: "1.5rem",
+            lineHeight: "1.4",
             fontWeight: "300",
             padding: "0 20px"
           }}
