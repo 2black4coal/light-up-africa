@@ -6,9 +6,8 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 60px 20px 80px;
+  padding: 40px 16px 60px;
   color: #fff;
-
   background:
     radial-gradient(circle at 20% 10%, rgba(255,255,255,0.05), transparent 40%),
     radial-gradient(circle at 80% 90%, rgba(255,255,255,0.03), transparent 50%),
@@ -17,7 +16,7 @@
 
 .contact-inner {
   width: 100%;
-  max-width: 800px;
+  max-width: 620px;
 }
 
 /* =========================
@@ -25,16 +24,18 @@
 ========================= */
 
 .contact-title {
-  font-size: 2rem;
-  letter-spacing: 0.08em;
+  font-size: 1.9rem;
+  letter-spacing: 0.12em;
+  font-weight: 300;
   text-transform: uppercase;
-  text-shadow: 0 0 16px rgba(255,255,255,0.15);
+  text-shadow: 0 0 22px rgba(255,255,255,0.25);
 }
 
-.contact-subtitle {
-  margin-top: 10px;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.6;
+.contact-subtext {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
 }
 
 /* =========================
@@ -42,91 +43,90 @@
 ========================= */
 
 .contact-section {
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .contact-heading {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+  font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 12px;
   color: rgba(255,255,255,0.85);
 }
 
 .contact-text {
-  color: rgba(255,255,255,0.75);
+  font-size: 0.95rem;
   line-height: 1.6;
-}
-
-.contact-text.small {
-  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 12px;
 }
 
 /* =========================
-   FORM
+   FORM — COMPACT
 ========================= */
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
+  gap: 10px;
 }
 
 .form-group label {
-  font-size: 0.8rem;
-  margin-bottom: 4px;
+  font-size: 0.75rem;
+  margin-bottom: 3px;
   color: rgba(255,255,255,0.6);
 }
 
 input, textarea, select {
   background: rgba(255,255,255,0.05);
   border: none;
-  padding: 10px;
+  padding: 8px 10px;
   color: #fff;
   outline: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  border-radius: 4px;
 }
 
 input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 10px rgba(255,255,255,0.15);
 }
 
-/* BUTTON */
+/* PURPOSE DROPDOWN FIX */
+select option[disabled] {
+  color: rgba(255,255,255,0.5);
+}
 
+select option {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* BUTTON */
 .contact-button {
-  margin-top: 10px;
-  padding: 12px;
+  margin-top: 6px;
+  padding: 10px;
   background: rgba(255,255,255,0.1);
   border: none;
   color: #fff;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 0.85rem;
 }
 
 .contact-button:hover {
   background: rgba(255,255,255,0.2);
 }
 
-/* =========================
-   EMAIL
-========================= */
-
+/* EMAIL */
 .contact-email {
   margin-top: 10px;
   font-size: 0.95rem;
   color: rgba(255,255,255,0.9);
 }
 
-/* =========================
-   REVEAL
-========================= */
-
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -138,16 +138,13 @@ input:focus, textarea:focus, select:focus {
   transform: translateY(0);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
+/* MOBILE */
 @media (max-width: 640px) {
   .contact-title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
-  .contact-subtitle {
+  .contact-text {
     font-size: 0.9rem;
   }
 }
