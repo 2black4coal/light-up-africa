@@ -1,8 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/contact.css";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    formData.append("access_key", "4cc1ce25-820c-4f62-bb25-bfc9d5960b73");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    setResult(data.success ? "Message sent successfully!" : "Something went wrong. Please try again.");
+  };
 
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");
@@ -37,43 +53,40 @@ const Contact = () => {
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://light-up-africa.com/contact" />
+
         <script type="application/ld+json">
-  {`
-    {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "Contact Light Up Africa",
-      "url": "https://light-up-africa.com/contact",
-      "description": "Get in touch with Light Up Africa for inquiries, collaboration, or support.",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "Light Up Africa",
-        "url": "https://light-up-africa.com",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer support",
-          "email": "inquiries@lightupafrica.com",
-          "availableLanguage": ["English"]
-        }
-      }
-    }
-  `}
-</script>
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "name": "Contact Light Up Africa",
+              "url": "https://light-up-africa.com/contact",
+              "description": "Get in touch with Light Up Africa for inquiries, collaboration, or support.",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Light Up Africa",
+                "url": "https://light-up-africa.com",
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "contactType": "customer support",
+                  "email": "inquiries@light-up-africa.com",
+                  "availableLanguage": ["English"]
+                }
+              }
+            }
+          `}
+        </script>
 
-  <link rel="canonical" href="https://light-up-africa.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Us — Light Up Africa" />
+        <meta property="og:description" content="Reach out to Light Up Africa for partnerships, support, or inquiries about our mission to electrify the continent." />
+        <meta property="og:url" content="https://light-up-africa.com/contact" />
+        <meta property="og:image" content="https://light-up-africa.com/og-home.jpg" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Contact Us — Light Up Africa" />
-  <meta property="og:description" content="Reach out to Light Up Africa for partnerships, support, or inquiries about our mission to electrify the continent." />
-  <meta property="og:url" content="https://light-up-africa.com/contact" />
-  <meta property="og:image" content="https://light-up-africa.com/og-home.jpg" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact Us — Light Up Africa" />
-  <meta name="twitter:description" content="Reach out to Light Up Africa for partnerships, support, or inquiries about our mission to electrify the continent." />
-  <meta name="twitter:image" content="https://light-up-africa.com/og-home.jpg" />
-
-
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us — Light Up Africa" />
+        <meta name="twitter:description" content="Reach out to Light Up Africa for partnerships, support, or inquiries about our mission to electrify the continent." />
+        <meta name="twitter:image" content="https://light-up-africa.com/og-home.jpg" />
       </Helmet>
 
       <div className="contact-page">
@@ -92,20 +105,22 @@ const Contact = () => {
           <section className="contact-section reveal">
             <h2 className="contact-heading">Send a Message</h2>
 
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={onSubmit}>
+              <input type="hidden" name="access_key" value="4cc1ce25-820c-4f62-bb25-bfc9d5960b73" />
+
               <div className="form-group">
                 <label>Full Name</label>
-                <input type="text" required />
+                <input type="text" name="name" required />
               </div>
 
               <div className="form-group">
                 <label>Email Address</label>
-                <input type="email" required />
+                <input type="email" name="email" required />
               </div>
 
               <div className="form-group">
                 <label>Purpose</label>
-                <select required>
+                <select name="purpose" required>
                   <option value="">Select an option</option>
                   <option>Partnership / Collaboration</option>
                   <option>Energy Innovation</option>
@@ -116,12 +131,14 @@ const Contact = () => {
 
               <div className="form-group">
                 <label>Message</label>
-                <textarea rows="5" required />
+                <textarea rows="5" name="message" required></textarea>
               </div>
 
               <button type="submit" className="contact-button">
                 Send Message
               </button>
+
+              <p className="form-result">{result}</p>
             </form>
           </section>
 
@@ -133,7 +150,7 @@ const Contact = () => {
             </p>
 
             <p className="contact-email">
-              policies@lightupafrica.org
+              inquiries@light-up-africa.com
             </p>
           </section>
 
@@ -159,7 +176,8 @@ const Contact = () => {
           </section>
 
         </div>
-          {/* NAV BACK */}
+
+        {/* NAV BACK */}
         <Link to="/lighthope" className="about-next">
           <span className="arrow">←</span>
           <span className="label">Light Hope</span>
