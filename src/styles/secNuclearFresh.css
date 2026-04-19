@@ -62,31 +62,21 @@
 .secNuclearFresh-text p:last-child {
   margin-bottom: 0;
 }
-
-/* TABLET */
-@media (max-width: 900px) {
-  .secNuclearFresh-row {
-    flex-direction: column;
-    align-items: center !important;
-  }
-
-  .secNuclearFresh-image {
-    width: 100%;
-    flex: none !important;     /* 🔥 FIXES SHRINKING */
-    aspect-ratio: 16/9;
-  }
-}
-
 /* TABLET + MOBILE FIX */
 @media (max-width: 900px) {
   .secNuclearFresh-row {
     flex-direction: column;
-    align-items: center !important;   /* 🔥 CRITICAL FIX */
+    align-items: flex-start !important;   /* 🔥 FIXES DISAPPEARING TEXT */
+    width: 100%;
   }
 
   .secNuclearFresh-image {
     width: 100%;
-    flex: none !important;            /* 🔥 FIXES SHRINKING */
+    flex: none !important;                /* 🔥 FIXES SHRINKING IMAGE */
     aspect-ratio: 16/9;
+  }
+
+  .secNuclearFresh-text {
+    width: 100%;                          /* 🔥 ENSURES TEXT NEVER COLLAPSES */
   }
 }
