@@ -69,44 +69,45 @@ const Contact = () => {
 
             <form className="contact-form" onSubmit={onSubmit}>
 
-              {/* ✅ KEEP ONLY THIS (no JS append anymore) */}
-              <input type="hidden" name="access_key" value="4cc1ce25-820c-4f62-bb25-bfc9d5960b73" />
+  <input type="hidden" name="access_key" value="4cc1ce25-820c-4f62-bb25-bfc9d5960b73" />
 
-              {/* ✅ IMPORTANT */}
-              <input type="hidden" name="subject" value="New Light-Up-Africa Contact Message" />
+  <input type="hidden" name="subject" value="New Light-Up-Africa Contact Message" />
 
-              <div className="form-group">
-                <label>Full Name</label>
-                <input type="text" name="name" required />
-              </div>
 
-              <div className="form-group">
-                <label>Email Address</label>
-                <input type="email" name="email" required />
-              </div>
+  <input type="hidden" name="to" value="inquiries@light-up-africa.com" />
 
-              <div className="form-group">
-                <label>Purpose</label>
-                <select name="purpose" required>
-                  <option value="">Select an option</option>
-                  <option>Partnership / Collaboration</option>
-                  <option>Energy Innovation</option>
-                  <option>Media / Press</option>
-                  <option>Support / General Inquiry</option>
-                </select>
-              </div>
+  <div className="form-group">
+    <label>Full Name</label>
+    <input type="text" name="name" required />
+  </div>
 
-              <div className="form-group">
-                <label>Message</label>
-                <textarea rows="5" name="message" required></textarea>
-              </div>
+  <div className="form-group">
+    <label>Email Address</label>
+    <input type="email" name="email" required />
+  </div>
 
-              <button type="submit" className="contact-button">
-                Send Message
-              </button>
+  <div className="form-group">
+    <label>Purpose</label>
+    <select name="purpose" required>
+      <option value="">Select an option</option>
+      <option>Partnership / Collaboration</option>
+      <option>Energy Innovation</option>
+      <option>Media / Press</option>
+      <option>Support / General Inquiry</option>
+    </select>
+  </div>
 
-              <p className="form-result">{result}</p>
-            </form>
+  <div className="form-group">
+    <label>Message</label>
+    <textarea rows="5" name="message" required></textarea>
+  </div>
+
+  <button type="submit" className="contact-button">
+    Send Message
+  </button>
+
+  <p className="form-result">{result}</p>
+</form>
           </section>
 
           <section className="contact-section reveal">
