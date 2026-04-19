@@ -11,6 +11,7 @@ import Sec6 from "../components/Sec6";
 import Sec7 from "../components/Sec7";
 import Sec8 from "../components/Sec8";
 import SecNuclear from "../components/SecNuclear";
+import Sec2A from "../components/Sec2A";
 
 import { Helmet } from "react-helmet";
 import "../styles/section-divider.css";
@@ -221,10 +222,10 @@ export default function Task() {
         </div>
 
       {/* PAGE CONTENT */}
-<div className="section-divider" />
+
 <RevealSection><Sec1 /></RevealSection>
 <div className="section-divider" />
-<RevealSection><Sec2 /></RevealSection>
+<RevealSection><Sec2A /></RevealSection>
 <div className="section-divider" />
 
 <RevealSection><Sec4 /></RevealSection>
@@ -246,6 +247,9 @@ export default function Task() {
 <div className="section-divider" />
 
 <RevealSection><Sec8 /></RevealSection>
+<div className="section-divider" />
+
+
 
 
         {/* BOTTOM SPACER */}

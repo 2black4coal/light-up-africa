@@ -1,8 +1,8 @@
 /* ============================================
-   SEC2 — FRESH, UNIQUE, MATCHES SEC1 STANDARD
+   SEC2A — FRESH, UNIQUE, MATCHES YOUR STANDARD
 ============================================ */
 
-.sec2fresh-wrapper {
+.sec2a-wrapper {
   width: 98%;
   max-width: 1400px;
   margin: 0 auto;
@@ -15,78 +15,86 @@
 }
 
 /* HEADING */
-.sec2fresh-heading {
+.sec2a-heading {
   font-size: clamp(0.7rem, 2vw, 1.6rem);
   font-weight: 200;
   text-align: center;
   margin-bottom: 1rem;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 /* ROW */
-.sec2fresh-row {
+.sec2a-row {
   display: flex;
   gap: 2rem;
   align-items: flex-end;
+
+
+
+
+
+
+.sec2a-text p:last-child {
+  margin-bottom: 0;        /* removes hidden space under last line */
 }
 
-.sec2fresh-row.reverse {
+
+
+}
+
+.sec2a-row.reverse {
   flex-direction: row-reverse;
 }
 
 /* IMAGE */
-.sec2fresh-image {
+.sec2a-image {
   flex: 0 0 45%;
-  height: 360px;
+  aspect-ratio: 16/9;
   background-size: cover;
   background-position: center;
   border-radius: 0;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
 }
 
 /* TEXT */
-.sec2fresh-text {
+.sec2a-text {
   flex: 1;
   font-size: clamp(0.6rem, 1.8vw, 1.2rem);
-  line-height: 1.55;
+  line-height: 1;
   font-weight: 300;
   color: #fff;
 }
 
-.sec2fresh-text p {
+.sec2a-text p {
   margin-bottom: 1rem;
 }
 
 /* TABLET */
 @media (max-width: 900px) {
-  .sec2fresh-row {
+  .sec2a-row {
     flex-direction: column;
   }
 
-  .sec2fresh-row.reverse {
+  .sec2a-row.reverse {
     flex-direction: column;
   }
 
-  .sec2fresh-image {
+  .sec2a-image {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 16/9;
   }
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .sec2fresh-image {
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .sec2fresh-text {
+  .sec2a-text {
     font-size: 1.2rem;
-    line-height: 1.4;
+    line-height: 1;
   }
 
-  .sec2fresh-heading {
+  .sec2a-heading {
     font-size: 1.4rem;
   }
 }

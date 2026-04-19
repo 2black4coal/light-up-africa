@@ -74,7 +74,7 @@ const Contact = () => {
   <input type="hidden" name="subject" value="New Light-Up-Africa Contact Message" />
 
 
-  <input type="hidden" name="to" value="inquiries@light-up-africa.com" />
+  <input type="hidden" name="to" value="fb.axon.01@gmail.com" />
 
   <div className="form-group">
     <label>Full Name</label>
