@@ -1,11 +1,12 @@
 import React from "react";
-import "../styles/sec5fresh.css";
+import { Link } from "react-router-dom";
+import "../../styles/generation.css";
 
-import s1 from "../assets/images/sec5/s1.jpg";
-import s2 from "../assets/images/sec5/s2.jpg";
-import s3 from "../assets/images/sec5/s3.jpg";
+import s1 from "../../assets/images/sec5/s1.jpg";
+import s2 from "../../assets/images/sec5/s2.jpg";
+import s3 from "../../assets/images/sec5/s3.jpg";
 
-export default function Sec5() {
+export default function Generation() {
   const blocks = [
     {
       image: s1,
@@ -54,23 +55,40 @@ export default function Sec5() {
   ];
 
   return (
-    <section className="sec5fresh-wrapper">
-      <h2 className="sec5fresh-heading">Modern Power Stations — Scale, Cost, and National Impact</h2>
+    <main className="generation-page">
+      <h1 className="generation-title">Modern Power Stations — Scale, Cost & National Impact</h1>
 
-      <div className="sec5fresh-grid">
-        {blocks.map((item, index) => (
-          <div key={index} className="sec5fresh-item">
-            <div
-              className="sec5fresh-image"
-              style={{ backgroundImage: `url(${item.image})` }}
-            />
-            <div
-              className="sec5fresh-text"
-              dangerouslySetInnerHTML={{ __html: item.text }}
-            />
-          </div>
-        ))}
-      </div>
-    </section>
+      {blocks.map((item, index) => (
+        <div key={index} className={`generation-row ${index % 2 === 1 ? "reverse" : ""}`}>
+          <div
+            className="generation-image"
+            style={{ backgroundImage: `url(${item.image})` }}
+          />
+
+          <div
+            className="generation-text"
+            dangerouslySetInnerHTML={{ __html: item.text }}
+          />
+        </div>
+      ))}
+
+      <section className="generation-conclusion">
+        <h2>Conclusion — Power Is the Foundation of Development</h2>
+        <p>
+          Modern power stations are not luxuries — they are the backbone of national progress.
+          They fuel industries, stabilize economies, and create millions of jobs across supply chains.
+        </p>
+        <p>
+          Africa has the resources to build world‑class power systems. What remains is the leadership
+          to prioritize electricity as the engine of sovereignty, prosperity, and continental growth.
+        </p>
+      </section>
+
+      <footer className="generation-footer">
+        Light Up Africa — A Continental Awakening
+      </footer>
+
+      <Link to="/task" className="generation-arrow">←</Link>
+    </main>
   );
 }

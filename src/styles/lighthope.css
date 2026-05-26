@@ -10,35 +10,115 @@
   box-sizing: border-box;
 }
 
-/* ===============================
-   NAVIGATION — FIXED + RESPONSIVE
-   =============================== */
-.light-nav {
+/* TOP‑LEFT NAVIGATION WRAPPER */
+.nav-electric {
   position: fixed;
-  top: 2rem;
-  left: 2rem;
-  z-index: 10;
+  top: 20px;
+  left: 20px;
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
+  gap: 14px;
+  z-index: 100;
 }
 
-.nav-arrow,
-.nav-home {
+/* BASE STYLE FOR BOTH BUTTONS */
+.electric-arrow,
+.electric-home {
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.2);
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 1rem;
   color: rgba(255,255,255,0.85);
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   border-radius: 6px;
   cursor: pointer;
   backdrop-filter: blur(6px);
   transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.nav-arrow:hover,
-.nav-home:hover {
+/* SVG HOME ICON SIZE */
+.electric-home svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* HOVER EFFECT */
+.electric-arrow:hover,
+.electric-home:hover {
   background: rgba(255,255,255,0.2);
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* ELECTRIC VOLT ANIMATION LINE */
+.electric-arrow::after,
+.electric-home::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -40%;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #00eaff,
+    #00eaff,
+    transparent
+  );
+  animation: volt 1.8s linear infinite;
+  filter: drop-shadow(0 0 4px #00eaff);
+}
+
+/* SAME ANIMATION AS GERD */
+@keyframes volt {
+  0%   { left: -40%; opacity: 0.2; }
+  20%  { opacity: 1; }
+  50%  { left: 60%; opacity: 1; }
+  80%  { opacity: 1; }
+  100% { left: 120%; opacity: 0.2; }
+}
+
+/* PHONE */
+@media (max-width: 600px) {
+  .nav-electric {
+    top: 15px;
+    left: 15px;
+  }
+
+  .electric-arrow,
+  .electric-home {
+    font-size: 1.1rem;
+    padding: 0.35rem 0.8rem;
+  }
+
+  .electric-home svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* SAME ANIMATION AS GERD */
+@keyframes volt {
+  0%   { left: -40%; opacity: 0.2; }
+  20%  { opacity: 1; }
+  50%  { left: 60%; opacity: 1; }
+  80%  { opacity: 1; }
+  100% { left: 120%; opacity: 0.2; }
+}
+
+/* PHONE SIZE */
+@media (max-width: 600px) {
+  .nav-electric {
+    top: 15px;
+    left: 15px;
+  }
+
+  .electric-arrow,
+  .electric-home {
+    font-size: 1.1rem;
+    padding: 0.35rem 0.8rem;
+  }
 }
 
 /* ===============================

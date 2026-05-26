@@ -1,0 +1,164 @@
+/* PAGE WRAPPER */
+.usage-page {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 60px 20px 200px;
+  box-sizing: border-box;
+}
+
+/* TITLE — GERD STANDARD */
+.usage-title {
+  text-align: center;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  font-weight: 100;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* MAIN ROW — TEXT LEFT + IMAGES RIGHT */
+.usage-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 100px;
+}
+
+/* LEFT TEXT — GERD STANDARD */
+.usage-text {
+  flex: 1 1 48%;
+  font-size: clamp(1.1rem, 2.2vw, 1.2rem);
+  line-height: 1.6;
+  font-weight: 100;
+  opacity: 0.85;
+}
+
+.usage-text p {
+  margin-bottom: 1rem;
+}
+
+/* RIGHT — FIXED 2×3 GRID */
+.usage-images {
+  flex: 1 1 48%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* ALWAYS 2 per row */
+  gap: 1rem;
+}
+
+/* IMAGE — SMALLER, NEVER CROPPED, FITS PAGE */
+.usage-image {
+  width: 100%;
+  aspect-ratio: 5/4;              /* ⭐ smaller height */
+  max-height: 110px;              /* ⭐ keeps images compact */
+  background-size: contain;       /* ⭐ no cropping */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;         /* ⭐ clean fill */
+}
+
+/* CONCLUSION — GERD STANDARD */
+.usage-conclusion {
+  max-width: 800px;
+  margin: 60px auto;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  line-height: 1.6;
+  font-weight: 100;
+  opacity: 0.85;
+}
+
+.usage-conclusion h2 {
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 1.6rem);
+  font-weight: 100;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+}
+
+.usage-conclusion p {
+  font-size: clamp(1.2rem, 2.2vw, 1.3rem);
+  line-height: 1.65;
+  font-weight: 100;
+  opacity: 0.80;
+  margin-bottom: 1rem;
+}
+
+/* FOOTER */
+.usage-footer {
+  text-align: center;
+  margin-top: 120px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ARROW — GERD STANDARD */
+.usage-arrow {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  font-size: 2rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 4px;
+  overflow: hidden;
+  z-index: 50;
+  transition: color 0.3s ease;
+}
+
+.usage-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -40%;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #00eaff,
+    #00eaff,
+    transparent
+  );
+  animation: volt 1.8s linear infinite;
+  filter: drop-shadow(0 0 4px #00eaff);
+}
+
+.usage-arrow:hover {
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .usage-row {
+    flex-direction: column;
+  }
+
+  .usage-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .usage-image {
+    max-height: 100px;   /* smaller for tablet */
+  }
+}
+
+/* MOBILE — STILL 2 PER ROW */
+@media (max-width: 600px) {
+  .usage-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .usage-image {
+    aspect-ratio: 4/3;
+    max-height: 90px;    /* ⭐ smallest for phone */
+  }
+
+  .usage-arrow {
+    bottom: 25px;
+    left: 25px;
+    font-size: 1.7rem;
+  }
+}

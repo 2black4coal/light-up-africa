@@ -1,22 +1,21 @@
 import React from "react";
-import "../styles/sec6fresh.css";
+import { Link } from "react-router-dom";
+import "../../styles/transmission.css";
 
-import l1 from "../assets/images/sec6/l1.jpg";
+import l1 from "../../assets/images/sec6/l1.jpg";
 
-export default function Sec6() {
+export default function Transmission() {
   return (
-    <section className="sec6fresh-wrapper">
-      <h2 className="sec6fresh-heading">Transmission Lines — The Lifeblood of Electrification</h2>
+    <main className="transmission-page">
+      <h1 className="transmission-title">Transmission Lines — The Lifeblood of Electrification</h1>
 
-      <div className="sec6fresh-row">
+      <div className="transmission-row">
+        <div
+          className="transmission-image"
+          style={{ backgroundImage: `url(${l1})` }}
+        />
 
-        {/* IMAGE COLUMN */}
-        <div className="sec6fresh-image">
-          <img src={l1} alt="Transmission Lines" />
-        </div>
-
-        {/* TEXT COLUMN */}
-        <div className="sec6fresh-text">
+        <div className="transmission-text">
           <p>
             <strong>Transmission Lines:</strong> These lines are the
             <strong> lifeblood of electrification</strong>, carrying power across
@@ -51,8 +50,26 @@ export default function Sec6() {
             building the lines, towers, and grids that keep a nation alive.
           </p>
         </div>
-
       </div>
-    </section>
+
+      <section className="transmission-conclusion">
+        <h2>Conclusion — Build the Lines, Build the Nation</h2>
+        <p>
+          Transmission lines are the arteries of national development. Without them, power plants
+          cannot deliver electricity, industries cannot grow, and communities remain in darkness.
+        </p>
+        <p>
+          Africa has the engineers, the workforce, and the land. What is needed now is the
+          commitment to build transmission networks that connect every region and unlock
+          continental prosperity.
+        </p>
+      </section>
+
+      <footer className="transmission-footer">
+         Light Up Africa — A Continental Awakening
+      </footer>
+
+      <Link to="/task" className="transmission-arrow">←</Link>
+    </main>
   );
 }

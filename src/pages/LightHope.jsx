@@ -168,15 +168,30 @@ export default function LightHope() {
 
       <div className="light-root">
 
-        {/* NAVIGATION */}
-        <div className="light-nav">
-          <button className="nav-arrow" onClick={() => navigate('/task')}>
-            ←
-          </button>
-          <button className="nav-home" onClick={() => navigate('/')}>
-            Home
-          </button>
-        </div>
+   {/* NAVIGATION — GERD ELECTRIC STYLE */}
+<div className="nav-electric">
+  <button className="electric-arrow" onClick={() => navigate('/task')}>
+    ←
+  </button>
+
+  <button className="electric-home" onClick={() => navigate('/')}>
+    <svg 
+      width="20" 
+      height="20" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <path d="M3 9l9-7 9 7" />
+      <path d="M9 22V12h6v10" />
+    </svg>
+  </button>
+</div>
+
+
 
         <div className="light-content">
 

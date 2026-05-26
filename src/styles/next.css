@@ -1,0 +1,164 @@
+/* PAGE WRAPPER */
+.next-page {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 60px 20px 200px;
+  box-sizing: border-box;
+}
+
+/* TITLE — MATCHES GERD EXACTLY */
+.next-title {
+  text-align: center;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);   /* phone-first */
+  font-weight: 100;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ROW — TWO CARDS */
+.next-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 120px;
+}
+
+/* CARD */
+.next-card {
+  flex: 1 1 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* IMAGE — MATCH GERD (PHONE-FRIENDLY) */
+.next-image.large {
+  width: 100%;
+  aspect-ratio: 4/3;              /* ⭐ same as GERD */
+  background-size: cover;
+  background-position: center;
+}
+
+/* TEXT — MATCH GERD BODY TEXT */
+.next-text h3 {
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);   /* same as GERD h2 scale */
+  font-weight: 100;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.next-text p {
+  font-size: clamp(1.1rem, 2.2vw, 1.2rem);   /* ⭐ same as GERD .gerd-text */
+  line-height: 1.6;
+  font-weight: 100;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* CONCLUSION — MATCH GERD EXTRA BLOCK */
+.next-conclusion {
+  max-width: 800px;
+  margin: 60px auto;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);   /* ⭐ same as GERD */
+  line-height: 1.6;
+  font-weight: 100;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* CONCLUSION TITLE — MATCH GERD EXTRA H2 */
+.next-conclusion h2 {
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 1.6rem);     /* ⭐ same as GERD */
+  font-weight: 100;
+  letter-spacing: 0.05em;
+  opacity: 0.75;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* CONCLUSION PARAGRAPHS — MATCH GERD EXTRA P */
+.next-conclusion p {
+  font-size: clamp(1.2rem, 2.2vw, 1.3rem);   /* ⭐ same as GERD */
+  line-height: 1.65;
+  font-weight: 100;
+  opacity: 0.80;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+/* FOOTER */
+.next-footer {
+  text-align: center;
+  margin-top: 120px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ARROW — MATCH GERD ELECTRIC ARROW */
+.next-arrow {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  font-size: 2rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 4px;
+  overflow: hidden;
+  z-index: 50;
+  transition: color 0.3s ease;
+}
+
+.next-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -40%;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #00eaff,
+    #00eaff,
+    transparent
+  );
+  animation: volt 1.8s linear infinite;
+  filter: drop-shadow(0 0 4px #00eaff);
+}
+
+.next-arrow:hover {
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .next-row {
+    flex-direction: column;
+  }
+}
+
+/* MOBILE — MATCH GERD PHONE-FIRST */
+@media (max-width: 600px) {
+  .next-image.large {
+    aspect-ratio: 4/3;
+  }
+
+  .next-arrow {
+    bottom: 25px;
+    left: 25px;
+    font-size: 1.7rem;
+  }
+}

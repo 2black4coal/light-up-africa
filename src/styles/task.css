@@ -1,73 +1,196 @@
-/* ===============================
-   UNIVERSAL TASK SECTION LAYOUT
-   =============================== */
-.task-section {
+.task-wrapper {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.task-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 40px;
+}
+
+.task-intro {
+  max-width: 750px;
+  margin: 0 auto 120px auto;
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.task-links-container {
+  position: relative;
   width: 100%;
-  min-height: 100vh;          /* each section fills the screen */
-  padding: 4rem 2rem;         /* prevents touching edges */
-  box-sizing: border-box;
+  margin-top: 80px;
+  margin-bottom: 80px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
+}
+
+
+.nav-electric-right {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 14px;
+  z-index: 100;
+}
+
+.electric-arrow,
+.electric-home {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.45rem 1rem;
+  color: rgba(255,255,255,0.85);
+  font-size: 1.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* Reverse layout support */
-.task-section.reverse {
-  flex-direction: row-reverse;
+.electric-home svg {
+  width: 20px;
+  height: 20px;
 }
 
-/* Text column */
-.task-text {
-  flex: 1;
-  max-width: 650px;
-  line-height: 1.6;
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.85);
+.electric-arrow:hover,
+.electric-home:hover {
+  background: rgba(255,255,255,0.2);
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
 }
 
-/* Image column */
-.task-image {
-  flex: 1;
+.electric-arrow::after,
+.electric-home::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -40%;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #00eaff,
+    #00eaff,
+    transparent
+  );
+  animation: volt 1.8s linear infinite;
+  filter: drop-shadow(0 0 4px #00eaff);
+}
+
+@keyframes volt {
+  0%   { left: -40%; opacity: 0.2; }
+  20%  { opacity: 1; }
+  50%  { left: 60%; opacity: 1; }
+  80%  { opacity: 1; }
+  100% { left: 120%; opacity: 0.2; }
+}
+
+@media (max-width: 600px) {
+  .nav-electric-right {
+    top: 15px;
+    right: 15px;
+  }
+
+  .electric-arrow,
+  .electric-home {
+    font-size: 1.1rem;
+    padding: 0.35rem 0.8rem;
+  }
+
+  .electric-home svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ELECTRIC SPINE */
+.electric-spine {
+  width: 80%;
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.electric-spine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.8) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: electricPulse 6s linear infinite;
+}
+
+@keyframes electricPulse {
+  0% { left: -20%; }
+  100% { left: 100%; }
+}
+
+/* LINKS */
+.task-links {
   display: flex;
+  gap: 22px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.task-image img {
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
+.task-link {
+  color: rgba(255,255,255,0.45);
+  font-weight: 200;
+  font-size: 0.7rem;        /* ⭐ reduce size */
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: opacity 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* ===============================
-   RESPONSIVE — TABLET
-   =============================== */
-@media (max-width: 1024px) {
-  .task-section {
-    padding: 3rem 1.5rem;
-  }
+
+.task-link:hover {
+  opacity: 1;
+  text-shadow: 0 0 8px rgba(255,255,255,0.8);
 }
 
-/* ===============================
-   RESPONSIVE — MOBILE
-   =============================== */
-@media (max-width: 700px) {
-  .task-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 3rem 1.2rem;
-  }
-
-  .task-image img {
-    max-width: 90%;
-  }
-
-  .task-text {
-    max-width: 100%;
-  }
+/* FOOTER */
+.task-footer {
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-top: 40px;
+  padding-bottom: 20px;
 }

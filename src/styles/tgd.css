@@ -1,0 +1,150 @@
+/* PAGE WRAPPER */
+.tgd-page {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 60px 20px 200px;
+  box-sizing: border-box;
+}
+
+/* PAGE TITLE (STANDARDIZED) */
+.tgd-title {
+  text-align: center;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);   /* phone-first */
+  font-weight: 100;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ROWS — DESKTOP/TABLET */
+.tgd-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  margin-bottom: 100px;
+}
+
+.tgd-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.tgd-image {
+  flex: 1 1 48%;
+  aspect-ratio: 16/9;        /* ⭐ REQUIRED FOR PHONE */
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* TEXT (STANDARDIZED BODY TEXT) */
+.tgd-text {
+  width: 48%;
+  font-size: clamp(1.1rem, 2.2vw, 1.25rem);   /* phone-first */
+  line-height: 1.6;
+  font-weight: 100;
+  opacity: 0.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* CONCLUSION (STANDARDIZED EXTRA BLOCK) */
+.tgd-conclusion {
+  max-width: 800px;
+  margin: 60px auto;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  line-height: 1.6;
+  font-weight: 100;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tgd-conclusion h2 {
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 1.6rem);
+  font-weight: 100;
+  letter-spacing: 0.05em;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tgd-conclusion p {
+  font-size: clamp(1.2rem, 2.2vw, 1.3rem);
+  line-height: 1.65;
+  font-weight: 100;
+  opacity: 0.80;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+/* FOOTER */
+.tgd-footer {
+  text-align: center;
+  margin-top: 120px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ARROW (STANDARDIZED ELECTRIC ARROW) */
+.tgd-arrow {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  font-size: 2rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 4px;
+  overflow: hidden;
+  z-index: 50;
+  transition: color 0.3s ease;
+}
+
+.tgd-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -40%;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #00eaff,
+    #00eaff,
+    transparent
+  );
+  animation: volt 1.8s linear infinite;
+  filter: drop-shadow(0 0 4px #00eaff);
+}
+
+.tgd-arrow:hover {
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* PHONE-FIRST OVERRIDES */
+@media (max-width: 700px) {
+  .tgd-row,
+  .tgd-row.reverse {
+    flex-direction: column;
+  }
+
+  .tgd-image,
+  .tgd-text {
+    width: 100%;
+  }
+
+  .tgd-arrow {
+    bottom: 25px;
+    left: 25px;
+    font-size: 1.7rem;
+  }
+}

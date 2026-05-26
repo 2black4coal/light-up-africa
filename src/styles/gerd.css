@@ -1,0 +1,161 @@
+/* PAGE WRAPPER */
+.gerd-page {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding-top: 60px;
+  padding: 20px;
+  padding-bottom: 200px;
+  box-sizing: border-box;
+}
+
+/* TITLE */
+.gerd-title {
+  text-align: center;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);   /* 🔥 bigger minimum for phones */
+  font-weight: 100 !important;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ARROW WITH ELECTRIC VOLT EFFECT */
+.gerd-arrow {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  font-size: 2rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 4px;
+  overflow: hidden;
+  z-index: 50;
+  transition: color 0.3s ease;
+}
+
+.gerd-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -40%;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #00eaff,
+    #00eaff,
+    transparent
+  );
+  animation: volt 1.8s linear infinite;
+  filter: drop-shadow(0 0 4px #00eaff);
+}
+
+@keyframes volt {
+  0%   { left: -40%; opacity: 0.2; }
+  20%  { opacity: 1; }
+  50%  { left: 60%; opacity: 1; }
+  80%  { opacity: 1; }
+  100% { left: 120%; opacity: 0.2; }
+}
+
+.gerd-arrow:hover {
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* GRID */
+.gerd-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.gerd-item {
+  flex: 1 1 calc(33.33% - 1.5rem);
+  min-width: 260px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gerd-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-size: cover;
+  background-position: center;
+}
+
+/* GRID TEXT */
+.gerd-text {
+  font-size: clamp(1.1rem, 2.2vw, 1.2rem);   /* 🔥 bigger minimum for phones */
+  line-height: 1.6;
+  font-weight: 100;
+  opacity: 0.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* EXTRA CONTENT */
+.gerd-extra {
+  max-width: 800px;
+  margin: 60px auto;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);  /* 🔥 bigger minimum */
+  line-height: 1.6;
+  font-weight: 100;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* EXTRA CONTENT TITLE */
+.gerd-extra h2 {
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 1.6rem);   /* 🔥 bigger minimum */
+  font-weight: 100;
+  letter-spacing: 0.05em;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* EXTRA CONTENT PARAGRAPHS */
+.gerd-extra p {
+  font-size: clamp(1.2rem, 2.2vw, 1.3rem);   /* 🔥 readable on phones */
+  line-height: 1.65;
+  font-weight: 100;
+  opacity: 0.80;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+/* FOOTER */
+.gerd-footer {
+  text-align: center;
+  margin-top: 80px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* PHONE-FIRST OVERRIDES */
+@media (max-width: 600px) {
+  .gerd-grid {
+    gap: 1.5rem;
+  }
+
+  .gerd-item {
+    min-width: 100%;
+  }
+
+  .gerd-arrow {
+    bottom: 25px;
+    left: 25px;
+    font-size: 1.7rem;
+  }
+}

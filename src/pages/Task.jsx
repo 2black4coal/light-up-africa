@@ -1,165 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import RevealSection from "../components/RevealSection";
-
-import Sec1 from "../components/Sec1";
-import Sec2 from "../components/Sec2";
-import Sec3 from "../components/Sec3";
-import Sec4 from "../components/Sec4";
-import Sec5 from "../components/Sec5";
-import Sec6 from "../components/Sec6";
-import Sec7 from "../components/Sec7";
-import Sec8 from "../components/Sec8";
-import SecNuclear from "../components/SecNuclear";
-import Sec2A from "../components/Sec2A";
-
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import "../styles/section-divider.css";
+import "../styles/task.css";
 
 export default function Task() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Helmet>
         <title>Our Task — Light Up Africa</title>
         <meta
           name="description"
-          content="Explore the mission, urgency, and responsibility behind powering Africa. This page outlines the truth, challenges, and actions needed to achieve universal electrification across the continent."
+          content="Explore the mission, urgency, and responsibility behind powering Africa. This page introduces the struggle, the truth, and the movement for continental electrification."
         />
-        <meta
-          name="keywords"
-          content="Light Up Africa mission, Africa electrification, African energy crisis, renewable energy Africa, continental power infrastructure"
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://light-up-africa.com/task" />
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Light Up Africa",
-      "url": "https://light-up-africa.com",
-      "logo": "https://light-up-africa.com/logo.png",
-      "description": "Light Up Africa is a continental movement dedicated to raising awareness, accelerating electrification, and supporting sustainable energy development across Africa.",
-      "foundingDate": "2024",
-      "founder": {
-        "@type": "Person",
-        "name": "Frank Black. — Founder & Campaign Lead"
-      },
-      "sameAs": [
-        "https://light-up-africa.com"
-      ]
-    })
-  }}
-/>
-
-  <link rel="canonical" href="https://light-up-africa.com/task" />
-
-
-  {/* OpenGraph */}
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Our Task — Light Up Africa" />
-  <meta property="og:description" content="Discover the mission, strategy, and continental vision behind Light Up Africa. This page outlines the core task driving our movement for universal electricity access." />
-  <meta property="og:url" content="https://light-up-africa.com/task" />
-  <meta property="og:image" content="https://light-up-africa.com/og-task.jpg" />
-
-  {/* Twitter */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Our Task — Light Up Africa" />
-  <meta name="twitter:description" content="Discover the mission, strategy, and continental vision behind Light Up Africa. This page outlines the core task driving our movement for universal electricity access." />
-  <meta name="twitter:image" content="https://light-up-africa.com/og-task.jpg" />
       </Helmet>
 
-      <main
-        style={{
-          background: "#000",
-          minHeight: "100vh",
-          paddingTop: "40px",
-          paddingBottom: "40px",
-          color: "#fff",
-          position: "relative"
-        }}
-      >
+      <main className="task-wrapper">
+
+        {/* TOP‑RIGHT ELECTRIC NAVIGATION */}
+        <div className="nav-electric-right">
+          <button className="electric-arrow" onClick={() => navigate('/lighthope')}>
+            →
+          </button>
+
+          <button className="electric-home" onClick={() => navigate('/')}>
+            <svg 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            >
+              <path d="M3 9l9-7 9 7" />
+              <path d="M9 22V12h6v10" />
+            </svg>
+          </button>
+        </div>
+
         {/* TOP SPACER */}
         <div style={{ height: "80px" }} />
 
         {/* PAGE TITLE */}
-        <h1
-          style={{
-            textAlign: "center",
-            margin: "0 0 40px 0",
-            fontSize: "2rem",
-            fontWeight: "600",
-            color: "rgba(255,255,255,0.9)"
-          }}
-        >
-          Our Task
-        </h1>
+        <h1 className="task-title">Our Task</h1>
 
-        {/* TOP‑LEFT NAVIGATION */}
-        <div
-          style={{
-            position: "fixed",
-            top: "2rem",
-            left: "2rem",
-            zIndex: 10,
-            display: "flex",
-            alignItems: "center",
-            gap: "0.8rem"
-          }}
-        >
-          {/* LEFT ARROW → GALLERY */}
-          <Link
-            to="/gallery"
-            style={{
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.2)",
-              padding: "0.5rem 1rem",
-              color: "rgba(255,255,255,0.85)",
-              fontSize: "1.2rem",
-              borderRadius: "6px",
-              cursor: "pointer",
-              backdropFilter: "blur(6px)",
-              transition: "0.3s ease",
-              textDecoration: "none"
-            }}
-          >
-            ←
-          </Link>
-
-          {/* RIGHT ARROW → LIGHTHOPE */}
-          <Link
-            to="/lighthope"
-            style={{
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.2)",
-              padding: "0.5rem 1rem",
-              color: "rgba(255,255,255,0.85)",
-              fontSize: "0.9rem",
-              borderRadius: "6px",
-              cursor: "pointer",
-              backdropFilter: "blur(6px)",
-              transition: "0.3s ease",
-              textDecoration: "none"
-            }}
-          >
-            →
-          </Link>
-        </div>
-
-        {/* INTRO TRUTH BLOCK */}
-        <div
-          style={{
-            maxWidth: "750px",
-            margin: "0 auto 80px auto",
-            textAlign: "center",
-            color: "rgba(255,255,255,0.85)",
-            fontSize: "1.5rem",
-            lineHeight: "1.4",
-            fontWeight: "300",
-            padding: "0 20px"
-          }}
-        >
+        {/* INTRO TEXT */}
+        <div className="task-intro">
           <p><strong>Over 900 million Africans still live without reliable electricity</strong> — the largest energy gap ever recorded in human history.</p>
 
           <p><strong>A continent of 1.55 billion people is forced to survive on generators, diesel and candles</strong> while the rest of the world moves forward with clean, constant power.</p>
@@ -176,8 +65,7 @@ export default function Task() {
             A few grow rich selling fuel into darkness.
             A few profit from delay.
             A few fear a powered Africa.
-            <strong>But billions suffer for it.</strong>
-            And that injustice must end.
+            <strong> But billions suffer for it.</strong>
           </p>
 
           <p>
@@ -185,7 +73,7 @@ export default function Task() {
             Not poor in sun.
             Not poor in wind.
             Not poor in engineers.
-            <strong>Africa has been unplugged by fear, delay, and small vision.</strong>
+            <strong> Africa has been unplugged by fear, delay, and small vision.</strong>
           </p>
 
           <p>
@@ -194,7 +82,7 @@ export default function Task() {
             Fight for grids across villages.
             Fight for batteries in cities.
             Fight for satellites, factories, data centers, hospitals, schools —
-            <strong>fight for light in every home.</strong>
+            <strong> fight for light in every home.</strong>
           </p>
 
           <p>
@@ -203,7 +91,7 @@ export default function Task() {
             Companies must choose sacrifice over short-term profit.
             Engineers must build.
             Citizens must demand.
-            <strong>History moves when people decide enough is enough.</strong>
+            <strong> History moves when people decide enough is enough.</strong>
           </p>
 
           <p>
@@ -211,7 +99,7 @@ export default function Task() {
             This is infrastructure.
             This is sovereignty.
             This is survival.
-            <strong>This is Africa’s right.</strong>
+            <strong> This is Africa’s right.</strong>
           </p>
 
           <p>
@@ -221,55 +109,34 @@ export default function Task() {
           <p><strong>This is the awakening. This is the struggle. This is the movement.</strong></p>
         </div>
 
-      {/* PAGE CONTENT */}
+        {/* BOTTOM NAVIGATION LINKS */}
+        <div className="task-links-container">
 
-<RevealSection><Sec1 /></RevealSection>
-<div className="section-divider" />
-<RevealSection><Sec2A /></RevealSection>
-<div className="section-divider" />
+          <div className="electric-spine"></div>
 
-<RevealSection><Sec4 /></RevealSection>
-<div className="section-divider" />
+          <div className="task-links">
+            <Link to="/task/gerd" className="task-link">GERD</Link>
+            <Link to="/task/tgd" className="task-link">TGD</Link>
+            <Link to="/task/turbine" className="task-link">TURBINE</Link>
+            <Link to="/task/kariba" className="task-link">KARIBA</Link>
+            <Link to="/task/generation" className="task-link">GENERATION</Link>
+            <Link to="/task/transmission" className="task-link">TRANSMISSION</Link>
+            <Link to="/task/usage" className="task-link">USAGE</Link>
+            <Link to="/task/nuclear" className="task-link">NUCLEAR</Link>
+            <Link to="/task/iter" className="task-link">ITER</Link>
+            <Link to="/task/robotics" className="task-link">ROBOTICS</Link>
+            <Link to="/task/next" className="task-link">NEXT</Link>
+          </div>
 
-<RevealSection><Sec3 /></RevealSection>
-<div className="section-divider" />
+        </div>
 
-<RevealSection><SecNuclear /></RevealSection>
-<div className="section-divider" />
-
-<RevealSection><Sec5 /></RevealSection>
-<div className="section-divider" />
-
-<RevealSection><Sec6 /></RevealSection>
-<div className="section-divider" />
-
-<RevealSection><Sec7 /></RevealSection>
-<div className="section-divider" />
-
-<RevealSection><Sec8 /></RevealSection>
-<div className="section-divider" />
-
-
-
-
-        {/* BOTTOM SPACER */}
-        <div style={{ height: "170px" }} />
-
-        {/* WRAP‑UP SIGNATURE */}
-        <div
-          style={{
-            textAlign: "center",
-            color: "rgba(255,255,255,0.6)",
-            fontSize: "0.85rem",
-            lineHeight: "1.4",
-            marginTop: "20px",
-            paddingBottom: "20px"
-          }}
-        >
+        {/* FOOTER */}
+        <div className="task-footer">
           <div>Light Up Africa — A Continental Awakening</div>
           <div>All rights reserved.</div>
           <div>For the people. By the people. With the people.</div>
         </div>
+
       </main>
     </>
   );

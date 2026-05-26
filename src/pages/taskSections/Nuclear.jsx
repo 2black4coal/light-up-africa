@@ -1,10 +1,11 @@
 import React from "react";
-import "../styles/secNuclearFresh.css";
+import { Link } from "react-router-dom";
+import "../../styles/nuclear.css";
 
-import n1 from "../assets/images/nuclear/n1.png";
-import n2 from "../assets/images/nuclear/n2.png";
+import n1 from "../../assets/images/nuclear/n1.png";
+import n2 from "../../assets/images/nuclear/n2.png";
 
-export default function SecNuclear() {
+export default function Nuclear() {
   const sections = [
     {
       image: n1,
@@ -33,24 +34,41 @@ export default function SecNuclear() {
   ];
 
   return (
-    <section className="secNuclearFresh-wrapper">
-      <h2 className="secNuclearFresh-heading">Nuclear Power — Industrial Strength, Long-Term Stability</h2>
+    <main className="nuclear-page">
+      <h1 className="nuclear-title">Nuclear Power — Industrial Strength & Long-Term Stability</h1>
 
       {sections.map((item, index) => (
-        <div
-          key={index}
-          className={`secNuclearFresh-row ${index === 1 ? "reverse" : ""}`}
-        >
+        <div key={index} className={`nuclear-row ${index === 1 ? "reverse" : ""}`}>
           <div
-            className="secNuclearFresh-image"
+            className="nuclear-image"
             style={{ backgroundImage: `url(${item.image})` }}
           />
+
           <div
-            className="secNuclearFresh-text"
+            className="nuclear-text"
             dangerouslySetInnerHTML={{ __html: item.text }}
           />
         </div>
       ))}
-    </section>
+
+      <section className="nuclear-conclusion">
+        <h2>Conclusion — Nuclear Power Is Africa’s Strategic Advantage</h2>
+        <p>
+          Nuclear energy is not futuristic — it is present-day industrial power. It provides
+          unmatched stability, low long-term costs, and the ability to support manufacturing,
+          transport, digital systems, and national security.
+        </p>
+        <p>
+          Africa has the uranium, the engineers, and the capability. What remains is leadership
+          willing to build reactors, train specialists, and secure the continent’s energy future.
+        </p>
+      </section>
+
+      <footer className="nuclear-footer">
+         Light Up Africa — A Continental Awakening
+      </footer>
+
+      <Link to="/task" className="nuclear-arrow">←</Link>
+    </main>
   );
 }
